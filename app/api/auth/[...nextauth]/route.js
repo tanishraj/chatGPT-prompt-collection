@@ -5,13 +5,13 @@ import User from "@models/user";
 import { connectToDB } from "@utils/database";
 
 const handler = NextAuth({
+  secret: process.env.NEXTAUTH_SECRET,
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     }),
   ],
-  secret: "IamVeryHandsome",
   callbacks: {
     async session({ session }) {
       // store the user id from MongoDB to session
