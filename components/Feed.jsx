@@ -78,7 +78,7 @@ const Feed = () => {
         />
       </form>
 
-      <PromptCardList data={filteredPosts} handleTagClick={() => {}} />
+      <PromptCardList data={posts} handleTagClick={() => {}} />
     </section>
   );
 };
